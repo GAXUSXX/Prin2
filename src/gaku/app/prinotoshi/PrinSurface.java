@@ -42,7 +42,7 @@ public class PrinSurface extends SurfaceView implements SurfaceHolder.Callback {
     //画像読み込み
     Resources res = this.getContext().getResources();
     Bitmap prin = BitmapFactory.decodeResource(res, R.drawable.purin_2);
-    Bitmap prin2 = BitmapFactory.decodeResource(res, R.drawable.purin_1);
+    Bitmap prin2 = BitmapFactory.decodeResource(res, R.drawable.purin_0);
     Bitmap sara = BitmapFactory.decodeResource(res, R.drawable.sara);
     Bitmap desk = BitmapFactory.decodeResource(res, R.drawable.desk);
 
