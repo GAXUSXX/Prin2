@@ -43,6 +43,7 @@ public class PrinSurface extends SurfaceView implements SurfaceHolder.Callback {
     Resources res = this.getContext().getResources();
     Bitmap prin = BitmapFactory.decodeResource(res, R.drawable.purin_2);
     Bitmap prin2 = BitmapFactory.decodeResource(res, R.drawable.purin_0);
+    Bitmap cup = BitmapFactory.decodeResource(res, R.drawable.cup_1);
     Bitmap sara = BitmapFactory.decodeResource(res, R.drawable.sara);
     Bitmap desk = BitmapFactory.decodeResource(res, R.drawable.desk);
 
@@ -146,6 +147,7 @@ public class PrinSurface extends SurfaceView implements SurfaceHolder.Callback {
 
                 sara= Bitmap.createScaledBitmap(sara, imageSize, imageSize, false);
                 prin= Bitmap.createScaledBitmap(prin, imageSize, imageSize, false);
+                cup= Bitmap.createScaledBitmap(cup, imageSize, imageSize, false);
                 if(FlickFlag > 20){
                 	itemFlickFlag = 0;
                 	FlickFlag = 0;
@@ -156,6 +158,8 @@ public class PrinSurface extends SurfaceView implements SurfaceHolder.Callback {
                 }
                 else if(FlickFlag > 10){
                 	canvas.drawBitmap(sara, x-imageSize/2, SetY, paintCircle);
+                	//カップはそのまま
+                	canvas.drawBitmap(cup, x-imageSize/2, (float) (getHeight() / 3)-imageSize/2, paintCircle);
                 	if(xFlickFlag == 1){
                 		canvas.drawBitmap(prin2, x-imageSize/2, y, paintCircle);
                 	}
@@ -169,7 +173,9 @@ public class PrinSurface extends SurfaceView implements SurfaceHolder.Callback {
                 	canvas.drawBitmap(sara, x-imageSize/2, y+getHeight()/21, paintCircle);
                 	if(xFlickFlag == 1){
                 		canvas.drawBitmap(prin2, x-imageSize/2, y, paintCircle);
-                		canvas.drawBitmap(prin, x-imageSize/2, (float) (getHeight() / 4), paintCircle);
+                		cup= Bitmap.createScaledBitmap(cup, imageSize, imageSize, false);
+                		canvas.drawBitmap(cup, x-imageSize/2, (getHeight() / 3)-imageSize/2, paintCircle);
+                		//canvas.drawBitmap(prin, x-imageSize/2, (float) (getHeight() / 4), paintCircle);
                 	}
                 	else if(yFlickFlag == 1){
                 		canvas.drawBitmap(prin, x-imageSize/2, y, paintCircle);
@@ -180,6 +186,7 @@ public class PrinSurface extends SurfaceView implements SurfaceHolder.Callback {
                 }
                 else{
                 	canvas.drawBitmap(sara, x-imageSize/2, y+imageSize, paintCircle);
+                	canvas.drawBitmap(cup, x-imageSize/2, y-imageSize/2, paintCircle);
                 	canvas.drawBitmap(prin, x-imageSize/2, y-imageSize/2, paintCircle);
                 }
 
