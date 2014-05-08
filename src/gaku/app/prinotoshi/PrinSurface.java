@@ -37,12 +37,15 @@ public class PrinSurface extends SurfaceView implements SurfaceHolder.Callback {
     private float SetY = 0;
     private int xFlickFlag = 0;
     private int yFlickFlag = 0;
+    private float defaultY = 0;
+    private int imageSize = 0;
 
     private SurfaceHolder holder;
     //画像読み込み
     Resources res = this.getContext().getResources();
     Bitmap prin = BitmapFactory.decodeResource(res, R.drawable.purin_2);
-    Bitmap prin2 = BitmapFactory.decodeResource(res, R.drawable.prin2);
+    Bitmap prin2 = BitmapFactory.decodeResource(res, R.drawable.purin_0);
+    Bitmap cup = BitmapFactory.decodeResource(res, R.drawable.cup_1);
     Bitmap sara = BitmapFactory.decodeResource(res, R.drawable.sara);
     Bitmap desk = BitmapFactory.decodeResource(res, R.drawable.desk);
 
@@ -97,8 +100,16 @@ public class PrinSurface extends SurfaceView implements SurfaceHolder.Callback {
     public void surfaceCreated(final SurfaceHolder surfaceHolder) {
         x = 0;
         y = (float) (getHeight() / 3);
+        //標準の上下位置
+        defaultY = (float)(getHeight() /1.4);
         DrawSurface(surfaceHolder);
+        // 100x100にリサイズ
+        imageSize = getWidth()/3;
+        //bitmap生成
         desk= Bitmap.createScaledBitmap(desk, getWidth(), getHeight(), true);
+        sara= Bitmap.createScaledBitmap(sara, imageSize, imageSize, false);
+        prin= Bitmap.createScaledBitmap(prin, imageSize, imageSize, false);
+        cup= Bitmap.createScaledBitmap(cup, imageSize, imageSize, false);
     }
 
     // コールバック内容の定義 (2/3)
@@ -123,9 +134,10 @@ public class PrinSurface extends SurfaceView implements SurfaceHolder.Callback {
             @Override
             public void run() {
             	//横に移動
-            	if(x < getWidth()/1.8){
+            	if(x < getWidth()/2){
             		x = x += getWidth()/25;
             	}
+            	//フリックしたらフラグを立てる
             	if(itemFlickFlag == 1){
             		FlickFlag ++;
             	}
@@ -137,15 +149,10 @@ public class PrinSurface extends SurfaceView implements SurfaceHolder.Callback {
                 // ロックした Canvas の取得
                 Canvas canvas = surfaceHolder.lockCanvas();
                 canvas.drawColor(Color.WHITE);
+                //背景描画
                 canvas.drawBitmap(desk, 0, 0, paintCircle);
-                r = r > 120 ? 10 : r + 3;
 
-                //canvas.drawCircle(x, y, r, paintCircle);
-                // 100x100にリサイズ
-                int imageSize = getWidth()/4;
-
-                sara= Bitmap.createScaledBitmap(sara, imageSize, imageSize, false);
-                prin= Bitmap.createScaledBitmap(prin, imageSize, imageSize, false);
+                //下に落として一定以上落ちたらスライド
                 if(FlickFlag > 20){
                 	itemFlickFlag = 0;
                 	FlickFlag = 0;
@@ -154,32 +161,43 @@ public class PrinSurface extends SurfaceView implements SurfaceHolder.Callback {
                 	xFlickFlag = 0;
                 	yFlickFlag = 0;
                 }
+                //フリックされたら判定
                 else if(FlickFlag > 10){
-                	canvas.drawBitmap(sara, x-imageSize/2, SetY, paintCircle);
+                	//お皿はそのまま
+                	canvas.drawBitmap(sara, x-imageSize/2, defaultY, paintCircle);
+                	//カップはそのまま
+                	canvas.drawBitmap(cup, x-imageSize/2, (float) (getHeight() / 3)-imageSize/2, paintCircle);
+                	//横にフリックされたら折る
                 	if(xFlickFlag == 1){
-                		canvas.drawBitmap(prin2, x-imageSize/2, y, paintCircle);
+                		canvas.drawBitmap(prin2, x-imageSize/2, (float) (defaultY-(imageSize/2.3)), paintCircle);
                 	}
+                	//立てにフリックされたらそのまま
                 	else if(yFlickFlag == 1){
-                		canvas.drawBitmap(prin, x-imageSize/2, y, paintCircle);
+                		canvas.drawBitmap(prin, x-imageSize/2, (float) (defaultY-(imageSize/2.3)), paintCircle);
                 	}
+                	//横に移動させる
                	 	x += getWidth()/20;
                 }
+
                 else if(itemFlickFlag == 1){
                 	prin2= Bitmap.createScaledBitmap(prin2, imageSize, imageSize, false);
-                	canvas.drawBitmap(sara, x-imageSize/2, y+getHeight()/21, paintCircle);
+                	canvas.drawBitmap(sara, x-imageSize/2, defaultY, paintCircle);
                 	if(xFlickFlag == 1){
-                		canvas.drawBitmap(prin2, x-imageSize/2, y, paintCircle);
-                		canvas.drawBitmap(prin, x-imageSize/2, (float) (getHeight() / 4), paintCircle);
+                		canvas.drawBitmap(prin2, x-imageSize/2, (float) (defaultY-(imageSize/2.3)), paintCircle);
+                		canvas.drawBitmap(cup, x-imageSize/2, (getHeight() / 3)-imageSize/2, paintCircle);
+                		//canvas.drawBitmap(prin, x-imageSize/2, (float) (getHeight() / 4), paintCircle);
                 	}
                 	else if(yFlickFlag == 1){
-                		canvas.drawBitmap(prin, x-imageSize/2, y, paintCircle);
+                		canvas.drawBitmap(cup, x-imageSize/2, (getHeight() / 3)-imageSize/2, paintCircle);
+                		canvas.drawBitmap(prin, x-imageSize/2, (float) (defaultY-(imageSize/2.3)), paintCircle);
                 	}
 
                 	SetX = x-imageSize/2;
                 	SetY = y;
                 }
                 else{
-                	canvas.drawBitmap(sara, x-imageSize/2, y+imageSize, paintCircle);
+                	canvas.drawBitmap(sara, x-imageSize/2, defaultY, paintCircle);
+                	canvas.drawBitmap(cup, x-imageSize/2, y-imageSize/2, paintCircle);
                 	canvas.drawBitmap(prin, x-imageSize/2, y-imageSize/2, paintCircle);
                 }
 
@@ -204,7 +222,7 @@ public class PrinSurface extends SurfaceView implements SurfaceHolder.Callback {
 
             //x = event.getX();
             //y = event.getY();
-            if(x > getWidth()/1.85 && event.getX() > getWidth()/2.15 && event.getX() < getWidth()/1.45 && event.getY() > getHeight()/3.35 && event.getY() < getHeight()/2.65){
+            if(event.getX() > getWidth() / 3 && event.getX() < getWidth() / 1.5 && event.getY() > getHeight() / 6 && event.getY() < getHeight() / 2){
 	            //x = 0;
 	            //y = (float) (getHeight() / 3);
             	Log.v("TOUCH","Flagon");
