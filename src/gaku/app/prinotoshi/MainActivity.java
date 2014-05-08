@@ -38,7 +38,7 @@ public class MainActivity extends Activity {
         //SurfaceViewTest surfaceView = new SurfaceViewTest(this);
         //PrinSurface surfaceView = new PrinSurface(this);
         //setContentView(surfaceView);// タイトルバーを非表示
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		//requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         Log.v("create","create");
         item0 = (ImageView)findViewById(R.id.item0);
