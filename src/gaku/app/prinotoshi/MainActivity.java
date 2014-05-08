@@ -31,7 +31,7 @@ public class MainActivity extends Activity {
 
     }
     public void Start(View view){
-    	//げーむすたーと
+    	//ゲームスタート
         Intent intent = new Intent(Intent.ACTION_MAIN);
         intent.setClassName( "gaku.app.prinotoshi","gaku.app.prinotoshi.StartActivity");
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
