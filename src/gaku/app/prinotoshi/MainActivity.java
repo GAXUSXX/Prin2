@@ -18,22 +18,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-<<<<<<< HEAD
 import android.widget.ImageView;
-=======
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.Toast;
->>>>>>> master
 import android.app.Activity;
 import android.content.Intent;
 
 public class MainActivity extends Activity {
 
-<<<<<<< HEAD
 	public ImageView item0;
-	
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,12 +43,12 @@ public class MainActivity extends Activity {
         Log.v("create","create");
         item0 = (ImageView)findViewById(R.id.item0);
     }
-    
+
     public void result(View view){
     	Intent intent = new Intent(this,Result.class);
     	startActivity(intent);
     }
-    
+
     public void select(View view){
     	switch(view.getId()){
     	case R.id.item1:
@@ -84,45 +80,8 @@ public class MainActivity extends Activity {
     		break;
     	}
     }
-    
-    @Override
-    protected void onResume() {
-    super.onResume();
-    // SurfaceView のインスタンスを実体化し、ContentView としてセットする
-    //SurfaceViewTest surfaceView = new SurfaceViewTest(this);
-    //PrinSurface surfaceView = new PrinSurface(this);
-    //setContentView(surfaceView);
 
-    }
-    public void Start(View view){
-    	//ゲームスタート
-        Intent intent = new Intent(Intent.ACTION_MAIN);
-        intent.setClassName( "gaku.app.prinotoshi","gaku.app.prinotoshi.StartActivity");
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-    }
-=======
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
 
-		// SurfaceView のインスタンスを実体化し、ContentView としてセットする
-		//SurfaceViewTest surfaceView = new SurfaceViewTest(this);
-		//PrinSurface surfaceView = new PrinSurface(this);
-		//setContentView(surfaceView);// タイトルバーを非表示
-		//requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.activity_main);
-		Log.v("create","create");
-	}
-	@Override
-	protected void onResume() {
-		super.onResume();
-		// SurfaceView のインスタンスを実体化し、ContentView としてセットする
-		//SurfaceViewTest surfaceView = new SurfaceViewTest(this);
-		//PrinSurface surfaceView = new PrinSurface(this);
-		//setContentView(surfaceView);
-
-	}
 	public void Start(View view){
 
 		view.setBackgroundDrawable(null);
@@ -226,5 +185,5 @@ public class MainActivity extends Activity {
 			e.printStackTrace();
 		}
 	}
->>>>>>> master
+
 }
