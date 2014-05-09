@@ -81,19 +81,20 @@ public final class R {
         public static final int yogurt_2=0x7f020039;
     }
     public static final class id {
-        public static final int MySurfaceView01=0x7f080017;
-        public static final int action_settings=0x7f080018;
+        public static final int MySurfaceView01=0x7f08001a;
+        public static final int action_settings=0x7f08001b;
+        public static final int desc=0x7f080018;
         public static final int imageView1=0x7f080000;
-        public static final int imageView10=0x7f080009;
-        public static final int imageView12=0x7f08000a;
+        public static final int imageView10=0x7f080007;
+        public static final int imageView12=0x7f080009;
         public static final int imageView2=0x7f080001;
         public static final int imageView3=0x7f080002;
         public static final int imageView4=0x7f080003;
         public static final int imageView5=0x7f080004;
-        public static final int imageView6=0x7f080005;
-        public static final int imageView7=0x7f080006;
-        public static final int imageView8=0x7f080007;
-        public static final int imageView9=0x7f080008;
+        public static final int imageView6=0x7f080008;
+        public static final int imageView7=0x7f08000a;
+        public static final int imageView8=0x7f080005;
+        public static final int imageView9=0x7f080006;
         public static final int item0=0x7f08000b;
         public static final int item1=0x7f08000d;
         public static final int item2=0x7f08000e;
@@ -106,6 +107,8 @@ public final class R {
         public static final int item9=0x7f080016;
         public static final int linearLayout1=0x7f08000c;
         public static final int linearLayout2=0x7f080010;
+        public static final int name=0x7f080017;
+        public static final int unlock=0x7f080019;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -118,7 +121,34 @@ public final class R {
     public static final class string {
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
+        public static final int desc1=0x7f05000c;
+        public static final int desc2=0x7f05000d;
+        public static final int desc3=0x7f05000e;
+        public static final int desc4=0x7f05000f;
+        public static final int desc5=0x7f050010;
+        public static final int desc6=0x7f050011;
+        public static final int desc7=0x7f050012;
+        public static final int desc8=0x7f050013;
+        public static final int desc9=0x7f050014;
         public static final int hello_world=0x7f050002;
+        public static final int item1=0x7f050003;
+        public static final int item2=0x7f050004;
+        public static final int item3=0x7f050005;
+        public static final int item4=0x7f050006;
+        public static final int item5=0x7f050007;
+        public static final int item6=0x7f050008;
+        public static final int item7=0x7f050009;
+        public static final int item8=0x7f05000a;
+        public static final int item9=0x7f05000b;
+        public static final int unlock1=0x7f050015;
+        public static final int unlock2=0x7f050016;
+        public static final int unlock3=0x7f050017;
+        public static final int unlock4=0x7f050018;
+        public static final int unlock5=0x7f050019;
+        public static final int unlock6=0x7f05001a;
+        public static final int unlock7=0x7f05001b;
+        public static final int unlock8=0x7f05001c;
+        public static final int unlock9=0x7f05001d;
     }
     public static final class style {
         /** 

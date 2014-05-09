@@ -61,23 +61,6 @@
 		            android:layout_marginTop="10dp"
 		            android:src="@drawable/item_set" />
 
-		        <ImageView
-		            android:id="@+id/imageView6"
-		            android:layout_width="fill_parent"
-		            android:layout_height="200dp"
-		            android:layout_alignTop="@id/imageView5"
-		            android:layout_centerHorizontal="true"
-		            android:layout_marginTop="180dp"
-		            android:src="@drawable/item_set" />
-
-		        <ImageView
-		            android:id="@+id/imageView7"
-		            android:layout_width="fill_parent"
-		            android:layout_height="480dp"
-		            android:layout_alignTop="@id/imageView6"
-		            android:layout_centerHorizontal="true"
-		            android:layout_marginTop="140dp"
-		            android:src="@drawable/item" />
 
 		        <LinearLayout
 		            android:layout_width="fill_parent"
@@ -107,30 +90,42 @@
 		                android:layout_marginTop="83dp"
 		                android:layout_weight="1"
 		                android:src="@drawable/none" />
-		        </LinearLayout>
+			        </LinearLayout>
 
-		        <ImageView
-		            android:id="@+id/imageView12"
-		            android:layout_width="wrap_content"
-		            android:layout_height="wrap_content"
-		            android:layout_alignTop="@+id/imageView7"
-		            android:layout_marginLeft="10dp"
-		            android:src="@drawable/buy" />
+			        <ImageView
+			            android:id="@+id/imageView6"
+			            android:layout_width="fill_parent"
+			            android:layout_height="200dp"
+			            android:layout_alignTop="@id/imageView5"
+			            android:layout_centerHorizontal="true"
+			            android:layout_marginTop="180dp"
+			            android:src="@drawable/item_set" />
+		        	<ImageView
+		        	    android:id="@+id/imageView12"
+		        	    android:layout_width="wrap_content"
+		        	    android:layout_height="wrap_content"
+		        	    android:layout_alignTop="@+id/imageView7"
+		        	    android:layout_marginLeft="10dp"
+		        	    android:layout_marginBottom="10dp"
+		        	    android:src="@drawable/buy" />
+		        	<ImageView
+		        	    android:id="@+id/item0"
+		        	    android:layout_width="wrap_content"
+		        	    android:layout_height="wrap_content"
+		        	    android:layout_above="@+id/imageView12"
+		        	    android:layout_alignParentLeft="true"
+		        	    android:layout_marginBottom="17dp"
+		        	   	android:layout_marginLeft="10dp"
+		        	    android:src="@drawable/none" />
 
-		        <LinearLayout
+				<ImageView
+		            android:id="@+id/imageView7"
 		            android:layout_width="fill_parent"
-		            android:layout_height="wrap_content"
-		            android:layout_above="@+id/imageView12"
-		            android:layout_alignParentLeft="true"
-		            android:layout_marginBottom="17dp"
-		            android:layout_marginLeft="10dp" >
-
-		            <ImageView
-		                android:id="@+id/item0"
-		                android:layout_width="wrap_content"
-		                android:layout_height="wrap_content"
-		                android:src="@drawable/none" />
-		        </LinearLayout>
+		            android:layout_height="480dp"
+		            android:layout_alignTop="@id/imageView6"
+		            android:layout_centerHorizontal="true"
+		            android:layout_marginTop="140dp"
+		            android:src="@drawable/item" />
 
 		        <LinearLayout
 		            android:id="@+id/linearLayout1"
@@ -162,7 +157,7 @@
 		                android:layout_height="wrap_content"
 		                android:layout_weight="1"
 		                android:onClick="select"
-		                android:src="@drawable/resurrection" />
+		                android:src="@drawable/double1" />
 		        </LinearLayout>
 
 		        <LinearLayout
@@ -179,7 +174,7 @@
 		                android:layout_height="wrap_content"
 		                android:layout_weight="1"
 		                android:onClick="select"
-		                android:src="@drawable/add1" />
+		                android:src="@drawable/resurrection" />
 
 		            <ImageView
 		                android:id="@+id/item5"
@@ -187,7 +182,7 @@
 		                android:layout_height="wrap_content"
 		                android:layout_weight="1"
 		                android:onClick="select"
-		                android:src="@drawable/resurrection" />
+		                android:src="@drawable/add5" />
 
 		            <ImageView
 		                android:id="@+id/item6"
@@ -195,7 +190,7 @@
 		                android:layout_height="wrap_content"
 		                android:layout_weight="1"
 		                android:onClick="select"
-		                android:src="@drawable/add5" />
+		                android:src="@drawable/add1" />
 		        </LinearLayout>
 
 		        <LinearLayout
@@ -231,8 +226,38 @@
 		                android:layout_weight="1"
 		                android:onClick="select"
 		                android:src="@drawable/lock" />
-
 		        </LinearLayout>
+
+		        <LinearLayout
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_alignTop="@+id/item0"
+		            android:layout_toRightOf="@+id/item0"
+		            android:layout_marginLeft="10dp"
+		            android:orientation="vertical" >
+
+		            <TextView
+		                android:id="@+id/name"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_marginTop="20dp"
+		                android:textSize="15sp" />
+
+		            <TextView
+		                android:id="@+id/desc"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_marginTop="20dp"
+		                />
+
+		            <TextView
+		                android:id="@+id/unlock"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_marginTop="20dp"
+		                />
+		        </LinearLayout>
+
 		    </RelativeLayout>
 
 	</LinearLayout>

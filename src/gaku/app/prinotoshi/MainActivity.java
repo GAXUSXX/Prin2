@@ -22,6 +22,7 @@ import android.widget.ImageView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.app.Activity;
 import android.content.Intent;
@@ -29,7 +30,10 @@ import android.content.Intent;
 public class MainActivity extends Activity {
 
 	public ImageView item0;
-
+	public TextView name;
+	public TextView desc;
+	public TextView unlock;
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +46,9 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         Log.v("create","create");
         item0 = (ImageView)findViewById(R.id.item0);
+        name = (TextView)findViewById(R.id.name);
+        desc = (TextView)findViewById(R.id.desc);
+        unlock = (TextView)findViewById(R.id.unlock);
     }
 
     public void result(View view){
@@ -53,30 +60,57 @@ public class MainActivity extends Activity {
     	switch(view.getId()){
     	case R.id.item1:
     		item0.setImageResource(R.drawable.muteki5);
+    		name.setText(R.string.item1);
+    		desc.setText(R.string.desc1);
+    		unlock.setText(R.string.unlock1);
     		break;
     	case R.id.item2:
-    		Log.v("item","2");
+    		item0.setImageResource(R.drawable.purin5);
+    		name.setText(R.string.item2);
+    		desc.setText(R.string.desc2);
+    		unlock.setText(R.string.unlock2);
     		break;
     	case R.id.item3:
-    		Log.v("item","3");
+    		item0.setImageResource(R.drawable.double1);
+    		name.setText(R.string.item3);
+    		desc.setText(R.string.desc3);
+    		unlock.setText(R.string.unlock3);
     		break;
     	case R.id.item4:
-    		Log.v("item","4");
+    		item0.setImageResource(R.drawable.resurrection);
+    		name.setText(R.string.item4);
+    		desc.setText(R.string.desc4);
+    		unlock.setText(R.string.unlock4);
     		break;
     	case R.id.item5:
-    		Log.v("item","5");
+    		item0.setImageResource(R.drawable.add5);
+    		name.setText(R.string.item5);
+    		desc.setText(R.string.desc5);
+    		unlock.setText(R.string.unlock5);
     		break;
     	case R.id.item6:
-    		Log.v("item","6");
+    		item0.setImageResource(R.drawable.add1);
+    		name.setText(R.string.item6);
+    		desc.setText(R.string.desc6);
+    		unlock.setText(R.string.unlock6);
     		break;
     	case R.id.item7:
-    		Log.v("item","7");
+    		item0.setImageResource(R.drawable.lock);
+    		name.setText(R.string.item7);
+    		desc.setText(R.string.desc7);
+    		unlock.setText(R.string.unlock7);
     		break;
     	case R.id.item8:
-    		Log.v("item","8");
+    		item0.setImageResource(R.drawable.lock);
+    		name.setText(R.string.item8);
+    		desc.setText(R.string.desc8);
+    		unlock.setText(R.string.unlock8);
     		break;
     	case R.id.item9:
-    		Log.v("item","9");
+    		item0.setImageResource(R.drawable.lock);
+    		name.setText(R.string.item9);
+    		desc.setText(R.string.desc9);
+    		unlock.setText(R.string.unlock9);
     		break;
     	}
     }
