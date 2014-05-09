@@ -67,24 +67,24 @@
 		            android:layout_height="fill_parent" >
 
 		            <ImageView
-		                android:id="@+id/imageView8"
+		                android:id="@+id/set1"
 		                android:layout_width="wrap_content"
 		                android:layout_height="wrap_content"
 		                android:layout_marginBottom="26dp"
 		                android:layout_marginTop="83dp"
 		                android:layout_weight="1"
-		                android:src="@drawable/add1" />
+		                android:src="@drawable/none" />
 
 		            <ImageView
-		                android:id="@+id/imageView9"
+		                android:id="@+id/set2"
 		                android:layout_width="wrap_content"
 		                android:layout_height="wrap_content"
 		                android:layout_marginTop="83dp"
 		                android:layout_weight="1"
-		                android:src="@drawable/resurrection" />
+		                android:src="@drawable/none" />
 
 		            <ImageView
-		                android:id="@+id/imageView10"
+		                android:id="@+id/set3"
 		                android:layout_width="wrap_content"
 		                android:layout_height="wrap_content"
 		                android:layout_marginTop="83dp"
@@ -207,7 +207,7 @@
 		                android:layout_marginTop="20dp"
 		                android:layout_weight="1"
 		                android:onClick="select"
-		                android:src="@drawable/lock" />
+		                android:src="@drawable/up10" />
 
 		            <ImageView
 		                android:id="@+id/item8"
@@ -216,7 +216,7 @@
 		                android:layout_marginTop="20dp"
 		                android:layout_weight="1"
 		                android:onClick="select"
-		                android:src="@drawable/lock" />
+		                android:src="@drawable/up10_2" />
 
 		            <ImageView
 		                android:id="@+id/item9"
@@ -225,7 +225,7 @@
 		                android:layout_marginTop="20dp"
 		                android:layout_weight="1"
 		                android:onClick="select"
-		                android:src="@drawable/lock" />
+		                android:src="@drawable/up20" />
 		        </LinearLayout>
 
 		        <LinearLayout
@@ -233,28 +233,29 @@
 		            android:layout_height="wrap_content"
 		            android:layout_alignTop="@+id/item0"
 		            android:layout_toRightOf="@+id/item0"
-		            android:layout_marginLeft="10dp"
+		            android:layout_marginLeft="5dp"
 		            android:orientation="vertical" >
 
 		            <TextView
 		                android:id="@+id/name"
 		                android:layout_width="wrap_content"
 		                android:layout_height="wrap_content"
-		                android:layout_marginTop="20dp"
-		                android:textSize="15sp" />
+		                android:textSize="20sp"/>
 
 		            <TextView
 		                android:id="@+id/desc"
 		                android:layout_width="wrap_content"
 		                android:layout_height="wrap_content"
-		                android:layout_marginTop="20dp"
+		                android:textSize="14sp"
+		                android:layout_marginTop="10dp"
 		                />
 
 		            <TextView
 		                android:id="@+id/unlock"
 		                android:layout_width="wrap_content"
 		                android:layout_height="wrap_content"
-		                android:layout_marginTop="20dp"
+		                android:textSize="20sp"
+		                android:layout_marginTop="35dp"
 		                />
 		        </LinearLayout>
 
