@@ -108,6 +108,7 @@ public class MainActivity extends Activity {
 		NAME.setText(name);
 		DESC.setText(desc);
 		UNLOCK.setText(unlock);
+
 		
 		if(selected.equals(saveName)){
 			setItem(saveName,res);
