@@ -39,12 +39,12 @@ public class MainActivity extends Activity {
 	public ImageView SET3;
 	public SharedPreferences pref;
 	public SharedPreferences.Editor editor;
-	
+
 	public String selected = "";
-	
+
 	public String[] SETS={"none","none","none"};
 	public ImageView[] ITEMS;
-	
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +53,7 @@ public class MainActivity extends Activity {
         //SurfaceViewTest surfaceView = new SurfaceViewTest(this);
         //PrinSurface surfaceView = new PrinSurface(this);
         //setContentView(surfaceView);// タイトルバーを非表示
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		//requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         Log.v("create","create");
         ITEM = (ImageView)findViewById(R.id.item0);
@@ -102,20 +102,20 @@ public class MainActivity extends Activity {
     		break;
     	}
     }
-    
+
     public void setDesc(int res,int name,String saveName,int desc,int unlock){
 		ITEM.setImageResource(res);
 		NAME.setText(name);
 		DESC.setText(desc);
 		UNLOCK.setText(unlock);
 
-		
+
 		if(selected.equals(saveName)){
 			setItem(saveName,res);
 		}
 		selected = saveName;
     }
-    
+
     public void setItem(String name,int res){
     	for(int i=0; i<3; i++){
     		if(SETS[i].equals(name)){

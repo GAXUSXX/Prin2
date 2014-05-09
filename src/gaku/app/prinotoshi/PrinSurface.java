@@ -42,6 +42,7 @@ public class PrinSurface extends SurfaceView implements SurfaceHolder.Callback {
 	private int imageSize = 0;
 	private int prinFlag = 0;
 	private int beforePrin = 100;
+	private int n;
 
 	private Bitmap[] resource = new Bitmap [101];
 
@@ -122,6 +123,20 @@ public class PrinSurface extends SurfaceView implements SurfaceHolder.Callback {
 		resource[3] = BitmapFactory.decodeResource(res, R.drawable.moti_2);
 		resource[4] = BitmapFactory.decodeResource(res, R.drawable.mushi_2);
 		resource[5] = BitmapFactory.decodeResource(res, R.drawable.yogurt_2);
+
+		resource[6] = BitmapFactory.decodeResource(res, R.drawable.purin_0);
+		resource[7] = BitmapFactory.decodeResource(res, R.drawable.coffee_0);
+		resource[8] = BitmapFactory.decodeResource(res, R.drawable.jerry_0);
+		resource[9] = BitmapFactory.decodeResource(res, R.drawable.moti_0);
+		resource[10] = BitmapFactory.decodeResource(res, R.drawable.mushi_0);
+		resource[11] = BitmapFactory.decodeResource(res, R.drawable.yogurt_0);
+
+		resource[12] = BitmapFactory.decodeResource(res, R.drawable.purin_1);
+		resource[13] = BitmapFactory.decodeResource(res, R.drawable.coffee_1);
+		resource[14] = BitmapFactory.decodeResource(res, R.drawable.jerry_1);
+		resource[15] = BitmapFactory.decodeResource(res, R.drawable.moti_1);
+		resource[16] = BitmapFactory.decodeResource(res, R.drawable.mushi_1);
+		resource[17] = BitmapFactory.decodeResource(res, R.drawable.yogurt_1);
 	}
 	// コールバック内容の定義 (2/3)
 	@Override
@@ -148,37 +163,40 @@ public class PrinSurface extends SurfaceView implements SurfaceHolder.Callback {
 				//横に移動
 				if(x < getWidth()/2){
 					x = x += getWidth()/25;
-					Random r = new Random();
-					int n = r.nextInt(26);
-
-					if(prinFlag != 1 && n!=beforePrin){
-						Log.v("make","Resourcce");
-						if(prin != null && n!=beforePrin && beforePrin <= 20){
-							prin.recycle();
-							prin = null;
+					if(x < getWidth()/24){
+						Random r = new Random();
+						n = r.nextInt(26);
+						if(prinFlag != 1 && n!=beforePrin){
+							Log.v("make","Resourcce");
+							if(prin != null && n!=beforePrin && beforePrin <= 20){
+								prin.recycle();
+								prin = null;
+							}
+							if(n <= 20 && beforePrin <= 20){
+								prin = resource[0];
+							}
+							if(n==21){
+								prin = resource[1];
+							}
+							if(n==22){
+								prin = resource[2];
+							}
+							if(n==23){
+								prin = resource[3];
+							}
+							if(n==24){
+								prin = resource[4];
+							}
+							if(n==25){
+								prin = resource[5];
+							}
+							prin= Bitmap.createScaledBitmap(prin, imageSize, imageSize, false);
+							prinFlag = 1;
+							beforePrin = n;
 						}
-						if(n <= 20 && beforePrin <= 20){
-							prin = resource[0];
-						}
-						if(n==21){
-							prin = resource[1];
-						}
-						if(n==22){
-							prin = resource[2];
-						}
-						if(n==23){
-							prin = resource[3];
-						}
-						if(n==24){
-							prin = resource[4];
-						}
-						if(n==25){
-							prin = resource[5];
-						}
-						prin= Bitmap.createScaledBitmap(prin, imageSize, imageSize, false);
-						prinFlag = 1;
-						beforePrin = n;
 					}
+
+
 				}
 				//フリックしたらフラグを立てる
 				if(itemFlickFlag == 1){
@@ -196,7 +214,7 @@ public class PrinSurface extends SurfaceView implements SurfaceHolder.Callback {
 				canvas.drawBitmap(desk, 0, 0, paintCircle);
 
 				//下に落として一定以上落ちたらスライド
-				if(FlickFlag > 20){
+				if(FlickFlag > 45){
 					itemFlickFlag = 0;
 					FlickFlag = 0;
 					x=0;
@@ -212,18 +230,51 @@ public class PrinSurface extends SurfaceView implements SurfaceHolder.Callback {
 					canvas.drawBitmap(cup, x-imageSize/2, (float) (getHeight() / 3)-imageSize/2, paintCircle);
 					//横にフリックされたら折る
 					if(xFlickFlag == 1){
-						canvas.drawBitmap(prin2, x-imageSize/2, (float) (defaultY-(imageSize/2.3)), paintCircle);
+						if(FlickFlag < 12){
+							Log.v("prin",String.valueOf(n));
+							if(prin2 != null){
+								prin2.recycle();
+								prin2 = null;
+							}
+							if(n <= 20){
+								prin2 = resource[6];
+							}
+							if(n==21){
+								prin2 = resource[13];
+							}
+							if(n==22){
+								prin2 = resource[14];
+							}
+							if(n==23){
+								prin2 = resource[15];
+							}
+							if(n==24){
+								prin2 = resource[16];
+							}
+							if(n==25){
+								prin2 = resource[17];
+							}
+							prin2= Bitmap.createScaledBitmap(prin2, imageSize, imageSize, false);
+						}
+						if(n <= 20){
+							canvas.drawBitmap(prin2, x-imageSize/2, (float) (defaultY-(imageSize/2.3)), paintCircle);
+						}
+						else{
+							prin2= Bitmap.createScaledBitmap(prin2, imageSize, imageSize, false);
+							canvas.drawBitmap(prin2, x-imageSize/2, (float) (defaultY-(imageSize/2.3)), paintCircle);
+						}
 					}
 					//立てにフリックされたらそのまま
 					else if(yFlickFlag == 1){
 						canvas.drawBitmap(prin, x-imageSize/2, (float) (defaultY-(imageSize/2.3)), paintCircle);
 					}
+					prin2= Bitmap.createScaledBitmap(prin2, imageSize, imageSize, false);
+					canvas.drawBitmap(prin2, x-imageSize/2, (float) (defaultY-(imageSize/2.3)), paintCircle);
 					//横に移動させる
 					x += getWidth()/20;
 				}
 
 				else if(itemFlickFlag == 1){
-					prin2= Bitmap.createScaledBitmap(prin2, imageSize, imageSize, false);
 					canvas.drawBitmap(sara, x-imageSize/2, defaultY, paintCircle);
 					if(xFlickFlag == 1){
 						canvas.drawBitmap(prin2, x-imageSize/2, (float) (defaultY-(imageSize/2.3)), paintCircle);
