@@ -22,14 +22,29 @@ import android.widget.ImageView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 
 public class MainActivity extends Activity {
 
-	public ImageView item0;
-
+	public ImageView ITEM;
+	public TextView NAME;
+	public TextView DESC;
+	public TextView UNLOCK;
+	public ImageView SET1;
+	public ImageView SET2;
+	public ImageView SET3;
+	public SharedPreferences pref;
+	public SharedPreferences.Editor editor;
+	
+	public String selected = "";
+	
+	public String[] SETS={"none","none","none"};
+	public ImageView[] ITEMS;
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,10 +53,17 @@ public class MainActivity extends Activity {
         //SurfaceViewTest surfaceView = new SurfaceViewTest(this);
         //PrinSurface surfaceView = new PrinSurface(this);
         //setContentView(surfaceView);// タイトルバーを非表示
-		//requestWindowFeature(Window.FEATURE_NO_TITLE);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         Log.v("create","create");
-        item0 = (ImageView)findViewById(R.id.item0);
+        ITEM = (ImageView)findViewById(R.id.item0);
+        NAME = (TextView)findViewById(R.id.name);
+        DESC = (TextView)findViewById(R.id.desc);
+        UNLOCK = (TextView)findViewById(R.id.unlock);
+        SET1 = (ImageView)findViewById(R.id.set1);
+        SET2 = (ImageView)findViewById(R.id.set2);
+        SET3 = (ImageView)findViewById(R.id.set3);
+        ITEMS=new ImageView[]{SET1,SET2,SET3};
     }
 
     public void result(View view){
@@ -52,33 +74,63 @@ public class MainActivity extends Activity {
     public void select(View view){
     	switch(view.getId()){
     	case R.id.item1:
-    		item0.setImageResource(R.drawable.muteki5);
+    		setDesc(R.drawable.muteki5,R.string.item1,"muteki",R.string.desc1,R.string.unlock1);
     		break;
     	case R.id.item2:
-    		Log.v("item","2");
+    		setDesc(R.drawable.purin5,R.string.item2,"purin5",R.string.desc2,R.string.unlock2);
     		break;
     	case R.id.item3:
-    		Log.v("item","3");
+    		setDesc(R.drawable.double1,R.string.item3,"double1",R.string.desc3,R.string.unlock3);
     		break;
     	case R.id.item4:
-    		Log.v("item","4");
+    		setDesc(R.drawable.resurrection,R.string.item4,"resurrection",R.string.desc4,R.string.unlock4);
     		break;
     	case R.id.item5:
-    		Log.v("item","5");
+    		setDesc(R.drawable.add5,R.string.item5,"add5",R.string.desc5,R.string.unlock5);
     		break;
     	case R.id.item6:
-    		Log.v("item","6");
+    		setDesc(R.drawable.add1,R.string.item6,"add1",R.string.desc6,R.string.unlock6);
     		break;
     	case R.id.item7:
-    		Log.v("item","7");
+    		setDesc(R.drawable.up10,R.string.item7,"up10",R.string.desc7,R.string.unlock7);
     		break;
     	case R.id.item8:
-    		Log.v("item","8");
+    		setDesc(R.drawable.up10_2,R.string.item8,"up10_2",R.string.desc8,R.string.unlock8);
     		break;
     	case R.id.item9:
-    		Log.v("item","9");
+    		setDesc(R.drawable.up20,R.string.item9,"up20",R.string.desc9,R.string.unlock9);
     		break;
     	}
+    }
+    
+    public void setDesc(int res,int name,String saveName,int desc,int unlock){
+		ITEM.setImageResource(res);
+		NAME.setText(name);
+		DESC.setText(desc);
+		UNLOCK.setText(unlock);
+
+		
+		if(selected.equals(saveName)){
+			setItem(saveName,res);
+		}
+		selected = saveName;
+    }
+    
+    public void setItem(String name,int res){
+    	for(int i=0; i<3; i++){
+    		if(SETS[i].equals(name)){
+    			SETS[i]="none";
+    			ITEMS[i].setImageResource(R.drawable.none);
+    			return;
+    		}
+    	}
+		for(int i=0; i<3; i++){
+		 	if(SETS[i].equals("none")){
+		 		SETS[i] = name;
+		 		ITEMS[i].setImageResource(res);
+		 		break;
+		 	}
+		}
     }
 
 
