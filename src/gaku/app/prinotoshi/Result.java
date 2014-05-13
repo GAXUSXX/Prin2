@@ -2,27 +2,33 @@ package gaku.app.prinotoshi;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.Window;
+import android.widget.TextView;
 
 public class Result extends Activity {
-	
+
 	public void onCreate(Bundle savedInstanceState){
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.result);
-		
+		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+		String score = prefs.getString("score", "0");
+		TextView scoretext = (TextView) findViewById(R.id.scoreText);
+		scoretext.setText(score);
 	}
-	
+
 	public void Line(View view){
 		// ラインで送る
 		Uri uri = Uri.parse("line://msg/text/testです");
 		Intent intent = new Intent(Intent.ACTION_VIEW,uri);
 		startActivity(intent);
 	}
-	
+
 	public void Retry(View view){
     	//リトライ
         Intent intent = new Intent(Intent.ACTION_MAIN);
@@ -31,7 +37,7 @@ public class Result extends Activity {
         startActivity(intent);
         finish();
     }
-	
+
 	public void toMenu(View view){
     	//メニュー
         Intent intent = new Intent(Intent.ACTION_MAIN);
@@ -40,5 +46,5 @@ public class Result extends Activity {
         startActivity(intent);
         finish();
     }
-	
+
 }

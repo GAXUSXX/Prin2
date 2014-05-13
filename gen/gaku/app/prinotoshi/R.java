@@ -82,7 +82,7 @@ public final class R {
     }
     public static final class id {
         public static final int MySurfaceView01=0x7f08001a;
-        public static final int action_settings=0x7f08001b;
+        public static final int action_settings=0x7f08001c;
         public static final int desc=0x7f080018;
         public static final int imageView1=0x7f080000;
         public static final int imageView12=0x7f080009;
@@ -105,6 +105,7 @@ public final class R {
         public static final int linearLayout1=0x7f08000c;
         public static final int linearLayout2=0x7f080010;
         public static final int name=0x7f080017;
+        public static final int scoreText=0x7f08001b;
         public static final int set1=0x7f080005;
         public static final int set2=0x7f080006;
         public static final int set3=0x7f080007;
