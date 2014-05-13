@@ -20,7 +20,6 @@ import com.facebook.android.FacebookError;
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Intent;
-<<<<<<< HEAD
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
@@ -29,9 +28,6 @@ import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
 
-public class Result extends Activity {
-
-=======
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -54,17 +50,14 @@ public class Result extends Activity {
 	private Facebook facebook = null;
 	private UiLifecycleHelper uiHelper;
 	
->>>>>>> cd36d4c5ed8141a14ff5e282bd583d95606d996c
 	public void onCreate(Bundle savedInstanceState){
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.result);
-<<<<<<< HEAD
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 		String score = prefs.getString("score", "0");
 		TextView scoretext = (TextView) findViewById(R.id.scoreText);
 		scoretext.setText(score);
-=======
 		
 		// 繧ｭ繝ｼ繝上ャ繧ｷ繝･繧貞�ｺ蜉帙☆繧九さ繝ｼ繝峨ｒ霑ｽ蜉�縺吶ｋ
 	    try {
@@ -92,7 +85,6 @@ public class Result extends Activity {
         uiHelper.onCreate(savedInstanceState);  
 		
 		
->>>>>>> cd36d4c5ed8141a14ff5e282bd583d95606d996c
 	}
 
 	public void Line(View view){
@@ -101,9 +93,6 @@ public class Result extends Activity {
 		Intent intent = new Intent(Intent.ACTION_VIEW,uri);
 		startActivity(intent);
 	}
-<<<<<<< HEAD
-
-=======
 	
 	public void Twitter(View view){
 		Uri uri = Uri.parse("https://twitter.com/intent/tweet?text=縺ｦ縺吶→縺ｧ縺�");
@@ -129,7 +118,6 @@ public class Result extends Activity {
         } 
 	}
 	
->>>>>>> cd36d4c5ed8141a14ff5e282bd583d95606d996c
 	public void Retry(View view){
     	//繝ｪ繝医Λ繧､
         Intent intent = new Intent(Intent.ACTION_MAIN);
