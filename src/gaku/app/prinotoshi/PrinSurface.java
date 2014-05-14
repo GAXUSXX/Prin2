@@ -336,8 +336,44 @@ public class PrinSurface extends SurfaceView implements SurfaceHolder.Callback {
 						//canvas.drawBitmap(prin, x-imageSize/2, (float) (getHeight() / 4), paintCircle);
 					}
 					else if(yFlickFlag == 1){
+						Log.v("prin",String.valueOf(n));
+						if(prin2 != null){
+							prin2.recycle();
+							prin2 = null;
+						}
+						if(n <= 20){
+							prin2 = resource[12];
+							SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
+							Editor edit = prefs.edit();
+							edit.putString("score",String.valueOf(gameCount));
+							edit.commit();
+
+							getContext().startActivity(new Intent(getContext(), Result.class));
+							System.gc();
+						}
+						if(n==21){
+							prin2 = resource[7];
+							gameokFlag++;
+						}
+						if(n==22){
+							prin2 = resource[8];
+							gameokFlag++;
+						}
+						if(n==23){
+							prin2 = resource[9];
+							gameokFlag++;
+						}
+						if(n==24){
+							prin2 = resource[10];
+							gameokFlag++;
+						}
+						if(n==25){
+							prin2 = resource[11];
+							gameokFlag++;
+						}
+						prin2= Bitmap.createScaledBitmap(prin2, imageSize, imageSize, false);
+						canvas.drawBitmap(prin2, x-imageSize/2, (float) (defaultY-(imageSize/2.3)), paintCircle);
 						canvas.drawBitmap(cup, x-imageSize/2, (getHeight() / 3)-imageSize/2, paintCircle);
-						canvas.drawBitmap(prin, x-imageSize/2, (float) (defaultY-(imageSize/2.3)), paintCircle);
 					}
 
 					SetX = x-imageSize/2;
