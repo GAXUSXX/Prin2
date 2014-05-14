@@ -149,7 +149,7 @@
 		                android:layout_height="wrap_content"
 		                android:layout_weight="1"
 		                android:onClick="select"
-		                android:src="@drawable/purin5" />
+		                android:src="@drawable/double1" />
 
 		            <ImageView
 		                android:id="@+id/item3"
@@ -157,7 +157,7 @@
 		                android:layout_height="wrap_content"
 		                android:layout_weight="1"
 		                android:onClick="select"
-		                android:src="@drawable/double1" />
+		                android:src="@drawable/up10" />
 		        </LinearLayout>
 
 		        <LinearLayout
@@ -174,7 +174,7 @@
 		                android:layout_height="wrap_content"
 		                android:layout_weight="1"
 		                android:onClick="select"
-		                android:src="@drawable/resurrection" />
+		                android:src="@drawable/add5" />
 
 		            <ImageView
 		                android:id="@+id/item5"
@@ -182,7 +182,7 @@
 		                android:layout_height="wrap_content"
 		                android:layout_weight="1"
 		                android:onClick="select"
-		                android:src="@drawable/add5" />
+		                android:src="@drawable/purin5" />
 
 		            <ImageView
 		                android:id="@+id/item6"
@@ -207,7 +207,7 @@
 		                android:layout_marginTop="20dp"
 		                android:layout_weight="1"
 		                android:onClick="select"
-		                android:src="@drawable/up10" />
+		                android:src="@drawable/up20" />
 
 		            <ImageView
 		                android:id="@+id/item8"
@@ -216,7 +216,7 @@
 		                android:layout_marginTop="20dp"
 		                android:layout_weight="1"
 		                android:onClick="select"
-		                android:src="@drawable/up10_2" />
+		                android:src="@drawable/resurrection" />
 
 		            <ImageView
 		                android:id="@+id/item9"
@@ -224,8 +224,8 @@
 		                android:layout_height="wrap_content"
 		                android:layout_marginTop="20dp"
 		                android:layout_weight="1"
-		                android:onClick="select"
-		                android:src="@drawable/up20" />
+		                android:alpha="0"
+		                android:src="@drawable/lock" />
 		        </LinearLayout>
 
 		        <LinearLayout

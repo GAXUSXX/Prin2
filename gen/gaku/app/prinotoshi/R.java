@@ -370,7 +370,7 @@ containing a value of this type.
     }
     public static final class string {
         public static final int action_settings=0x7f07001b;
-        public static final int app_id=0x7f070038;
+        public static final int app_id=0x7f070035;
         public static final int app_name=0x7f07001a;
         public static final int com_facebook_choose_friends=0x7f07000f;
         public static final int com_facebook_dialogloginactivity_ok_button=0x7f070000;
@@ -398,15 +398,14 @@ containing a value of this type.
         public static final int com_facebook_usersettingsfragment_log_in_button=0x7f070008;
         public static final int com_facebook_usersettingsfragment_logged_in=0x7f070009;
         public static final int com_facebook_usersettingsfragment_not_logged_in=0x7f07000a;
-        public static final int desc1=0x7f070026;
-        public static final int desc2=0x7f070027;
-        public static final int desc3=0x7f070028;
-        public static final int desc4=0x7f070029;
-        public static final int desc5=0x7f07002a;
-        public static final int desc6=0x7f07002b;
-        public static final int desc7=0x7f07002c;
-        public static final int desc8=0x7f07002d;
-        public static final int desc9=0x7f07002e;
+        public static final int desc1=0x7f070025;
+        public static final int desc2=0x7f070026;
+        public static final int desc3=0x7f070027;
+        public static final int desc4=0x7f070028;
+        public static final int desc5=0x7f070029;
+        public static final int desc6=0x7f07002a;
+        public static final int desc7=0x7f07002b;
+        public static final int desc8=0x7f07002c;
         public static final int hello_world=0x7f07001c;
         public static final int item1=0x7f07001d;
         public static final int item2=0x7f07001e;
@@ -416,16 +415,14 @@ containing a value of this type.
         public static final int item6=0x7f070022;
         public static final int item7=0x7f070023;
         public static final int item8=0x7f070024;
-        public static final int item9=0x7f070025;
-        public static final int unlock1=0x7f07002f;
-        public static final int unlock2=0x7f070030;
-        public static final int unlock3=0x7f070031;
-        public static final int unlock4=0x7f070032;
-        public static final int unlock5=0x7f070033;
-        public static final int unlock6=0x7f070034;
-        public static final int unlock7=0x7f070035;
-        public static final int unlock8=0x7f070036;
-        public static final int unlock9=0x7f070037;
+        public static final int unlock1=0x7f07002d;
+        public static final int unlock2=0x7f07002e;
+        public static final int unlock3=0x7f07002f;
+        public static final int unlock4=0x7f070030;
+        public static final int unlock5=0x7f070031;
+        public static final int unlock6=0x7f070032;
+        public static final int unlock7=0x7f070033;
+        public static final int unlock8=0x7f070034;
     }
     public static final class style {
         /** 

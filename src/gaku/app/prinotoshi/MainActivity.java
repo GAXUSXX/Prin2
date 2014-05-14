@@ -49,10 +49,10 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // SurfaceView のインスタンスを実体化し、ContentView としてセットする
+        // SurfaceView 縺ｮ繧､繝ｳ繧ｹ繧ｿ繝ｳ繧ｹ繧貞ｮ滉ｽ灘喧縺励�，ontentView 縺ｨ縺励※繧ｻ繝�繝医☆繧�
         //SurfaceViewTest surfaceView = new SurfaceViewTest(this);
         //PrinSurface surfaceView = new PrinSurface(this);
-        //setContentView(surfaceView);// タイトルバーを非表示
+        //setContentView(surfaceView);// 繧ｿ繧､繝医Ν繝舌�ｼ繧帝撼陦ｨ遉ｺ
 		//requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         Log.v("create","create");
@@ -74,31 +74,28 @@ public class MainActivity extends Activity {
     public void select(View view){
     	switch(view.getId()){
     	case R.id.item1:
-    		setDesc(R.drawable.muteki5,R.string.item1,"muteki",R.string.desc1,R.string.unlock1);
+    		setDesc(R.drawable.muteki5,R.string.item1,"muteki5",R.string.desc1,R.string.unlock1);
     		break;
     	case R.id.item2:
-    		setDesc(R.drawable.purin5,R.string.item2,"purin5",R.string.desc2,R.string.unlock2);
+    		setDesc(R.drawable.double1,R.string.item2,"double1",R.string.desc2,R.string.unlock2);
     		break;
     	case R.id.item3:
-    		setDesc(R.drawable.double1,R.string.item3,"double1",R.string.desc3,R.string.unlock3);
+    		setDesc(R.drawable.up10,R.string.item3,"up10",R.string.desc3,R.string.unlock3);
     		break;
     	case R.id.item4:
-    		setDesc(R.drawable.resurrection,R.string.item4,"resurrection",R.string.desc4,R.string.unlock4);
+    		setDesc(R.drawable.add5,R.string.item4,"add5",R.string.desc4,R.string.unlock4);
     		break;
     	case R.id.item5:
-    		setDesc(R.drawable.add5,R.string.item5,"add5",R.string.desc5,R.string.unlock5);
+    		setDesc(R.drawable.purin5,R.string.item5,"purin5",R.string.desc5,R.string.unlock5);
     		break;
     	case R.id.item6:
     		setDesc(R.drawable.add1,R.string.item6,"add1",R.string.desc6,R.string.unlock6);
     		break;
     	case R.id.item7:
-    		setDesc(R.drawable.up10,R.string.item7,"up10",R.string.desc7,R.string.unlock7);
+    		setDesc(R.drawable.up20,R.string.item7,"up20",R.string.desc7,R.string.unlock7);
     		break;
     	case R.id.item8:
-    		setDesc(R.drawable.up10_2,R.string.item8,"up10_2",R.string.desc8,R.string.unlock8);
-    		break;
-    	case R.id.item9:
-    		setDesc(R.drawable.up20,R.string.item9,"up20",R.string.desc9,R.string.unlock9);
+    		setDesc(R.drawable.resurrection,R.string.item8,"resurrection",R.string.desc8,R.string.unlock8);
     		break;
     	}
     }
@@ -144,7 +141,7 @@ public class MainActivity extends Activity {
 				Start(vg.getChildAt(i));
 			}
 		}
-		//ゲームスタート
+		//繧ｲ繝ｼ繝�繧ｹ繧ｿ繝ｼ繝�
 		Intent intent = new Intent(Intent.ACTION_MAIN);
 		intent.setClassName( "gaku.app.prinotoshi","gaku.app.prinotoshi.StartActivity");
 		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -152,30 +149,30 @@ public class MainActivity extends Activity {
 	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// メニューの要素を追加
+		// 繝｡繝九Η繝ｼ縺ｮ隕∫ｴ�繧定ｿｽ蜉�
 		super.onCreateOptionsMenu(menu);
 		menu.add(0, 0, 0, "Update");
 
 		return true;
 	}
 
-	// オプションメニュー選択された場合、選択項目に合わせて
-	// WebViewの表示先URLを変更する。
+	// 繧ｪ繝励す繝ｧ繝ｳ繝｡繝九Η繝ｼ驕ｸ謚槭＆繧後◆蝣ｴ蜷医��驕ｸ謚樣��逶ｮ縺ｫ蜷医ｏ縺帙※
+	// WebView縺ｮ陦ｨ遉ｺ蜈�URL繧貞､画峩縺吶ｋ縲�
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		/* webViewにlayout.xmlのwebviewをセット */
+		/* webView縺ｫlayout.xml縺ｮwebview繧偵そ繝�繝� */
 		// WebView myWebView = (WebView)findViewById(R.id.webview);
 		super.onOptionsItemSelected(item);
 		int itemId = item.getItemId();
 		switch (itemId) {
 		case 0:
-			// パフォーマンス低下を検出する機能を無効にしておく
+			// 繝代ヵ繧ｩ繝ｼ繝槭Φ繧ｹ菴惹ｸ九ｒ讀懷�ｺ縺吶ｋ讖溯�ｽ繧堤┌蜉ｹ縺ｫ縺励※縺翫￥
 			StrictMode
 			.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
 			.permitAll().build());
 
 			String url0 = "http://pppnexus.ddo.jp/prinotoshi.apk";
-			// ダウンロード・インストール開始
+			// 繝�繧ｦ繝ｳ繝ｭ繝ｼ繝峨�ｻ繧､繝ｳ繧ｹ繝医�ｼ繝ｫ髢句ｧ�
 			download(url0);
 
 			break;
@@ -186,29 +183,29 @@ public class MainActivity extends Activity {
 	}
 
 	/**
-	 * ダウンロード・インストールメソッド
+	 * 繝�繧ｦ繝ｳ繝ｭ繝ｼ繝峨�ｻ繧､繝ｳ繧ｹ繝医�ｼ繝ｫ繝｡繧ｽ繝�繝�
 	 */
 	public void download(String apkurl) {
 
 		try {
-			// URL設定
+			// URL險ｭ螳�
 			URL url = new URL(apkurl);
 
-			// HTTP接続開始
+			// HTTP謗･邯夐幕蟋�
 			HttpURLConnection c = (HttpURLConnection) url.openConnection();
 			c.setRequestMethod("GET");
 			c.connect();
-			// SDカードの設定
+			// SD繧ｫ繝ｼ繝峨�ｮ險ｭ螳�
 			String PATH = Environment.getExternalStorageDirectory()
 					+ "/download/";
 			File file = new File(PATH);
 			file.mkdirs();
 
-			// テンポラリファイルの設定
+			// 繝�繝ｳ繝昴Λ繝ｪ繝輔ぃ繧､繝ｫ縺ｮ險ｭ螳�
 			File outputFile = new File(file, "app.apk");
 			FileOutputStream fos = new FileOutputStream(outputFile);
 
-			// ダウンロード開始
+			// 繝�繧ｦ繝ｳ繝ｭ繝ｼ繝蛾幕蟋�
 			InputStream is = c.getInputStream();
 			byte[] buffer = new byte[1024];
 			int len = 0;
@@ -218,16 +215,16 @@ public class MainActivity extends Activity {
 			fos.close();
 			is.close();
 
-			// Intent生成
+			// Intent逕滓��
 			Intent intent = new Intent(Intent.ACTION_VIEW);
-			// MIME type設定
+			// MIME type險ｭ螳�
 			intent.setDataAndType(
 					Uri.fromFile(new File(Environment
 							.getExternalStorageDirectory()
 							+ "/download/"
 							+ "app.apk")),
 					"application/vnd.android.package-archive");
-			// Intent発行
+			// Intent逋ｺ陦�
 			startActivity(intent);
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
